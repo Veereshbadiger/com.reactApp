@@ -1,11 +1,15 @@
 import React from 'react';
 import {SafeAreaView,StyleSheet,Text,} from 'react-native';
-import SignInScreen from './src/screens/SignInScreen';
+// import SignInScreen from './src/screens/SignInScreen';
+import EmployeeList from './src/components/EmployeeList';
+import { EmployeeForm } from './src/components';
+
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaView style={styles.root}>
-      <SignInScreen />
+      <EmployeeList />
+      <EmployeeForm />
     </SafeAreaView>
   );
 }
