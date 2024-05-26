@@ -8,7 +8,6 @@ const API_URL = apiConfig.host;
 export const getAllEmployees = async () => {
   try {
     const response = await axios.get(`${API_URL}/employee`);
-    console.log('hit employee');
     return response.data;
   } catch (error) {
     console.error('Error fetching employees:', error);

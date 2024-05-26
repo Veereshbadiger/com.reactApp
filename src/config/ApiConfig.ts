@@ -1,5 +1,5 @@
 class ApiConfig {
-    host = "https://6bec-2409-40f2-2085-79bd-79c6-9b91-afe5-9504.ngrok-free.app"; // Default host URL, replace with your actual host URL
+    host = "https://dc37-2409-40f2-209f-8374-4126-7119-44e2-4088.ngrok-free.app"; // Default host URL, replace with your actual host URL
 }
 
 const apiConfig = new ApiConfig();

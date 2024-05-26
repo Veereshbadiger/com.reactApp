@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, ScrollView, StyleSheet } from 'react-native';
 import { getAllEmployees, deleteEmployee } from '../services/employeeService';
+import { Employee } from '../types/Employee';
 
-interface Employee {
-  employeeId: number;
-  employeeName: string;
-  employeeAddress: string;
-  employeePhNumber: string;
-}
 
 const EmployeeList: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -41,7 +36,6 @@ const EmployeeList: React.FC = () => {
       {employees.map((item) => (
         <View key={item.employeeId} style={styles.itemContainer}>
           <Text style={styles.name}>{item.employeeName}</Text>
-          <Text style={styles.name}>"hello"</Text>
           <Text style={styles.address}>{item.employeeAddress}</Text>
           <Text style={styles.phone}>{item.employeePhNumber}</Text>
           <Button title="Delete" onPress={() => handleDelete(item.employeeId)} />
