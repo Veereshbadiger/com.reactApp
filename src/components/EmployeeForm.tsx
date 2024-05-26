@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, StyleSheet,Alert } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { createEmployee, updateEmployee, getEmployee } from '../services/employeeService';
-
-interface Employee {
-  employeeId?: number;
-  employeeName: string;
-  employeeAddress: string;
-  employeePhNumber: string; // Changed to string type to match the service functions
-}
+import { Employee } from '../types/Employee';
 
 interface EmployeeFormProps {
   employeeId?: number; // Optional prop for updating an existing employee
@@ -16,6 +10,7 @@ interface EmployeeFormProps {
 
 const EmployeeForm: React.FC<EmployeeFormProps> = ({ employeeId, onSuccess }) => {
   const [employee, setEmployee] = useState<Employee>({
+    employeeId: employeeId ?? 0, // Set to 0 or use a default value
     employeeName: '',
     employeeAddress: '',
     employeePhNumber: '',
@@ -84,10 +79,12 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employeeId, onSuccess }) =>
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    backgroundColor: 'black',
   },
   label: {
     fontSize: 18,
     marginVertical: 10,
+    color: 'white',
   },
   input: {
     borderWidth: 1,
@@ -95,6 +92,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 10,
     fontSize: 18,
+    color: 'white',
   },
 });
 
